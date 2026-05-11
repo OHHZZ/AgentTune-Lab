@@ -1,4 +1,5 @@
 项目概述
+
 本项目是一个轻量级大模型监督微调流程，用于提升模型在 Agent 工具/API 文档问答场景下的回答能力。项目基于 Hugging Face Transformers 与 PEFT LoRA，对 Qwen/Qwen2.5-0.5B-Instruct 进行参数高效微调。
 
 项目定位为 Agent 支撑模块：Agent 在执行任务时经常需要理解 SDK/API 文档、解释工具参数、回答工具使用问题，并根据文档处理调用错误。
