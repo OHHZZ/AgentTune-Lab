@@ -1,0 +1,22 @@
+.venv/
+.tmp/
+.vscode/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+outputs/*
+!outputs/README.md
+models/
+
+data/processed/*
+data/raw/lamini_docs.jsonl
+
+*.log
+*.safetensors
+*.pt
+*.bin
+
+# Course-exported notes are kept locally but excluded from the public project repo.
+0*_*.md
+docs/course_labs/

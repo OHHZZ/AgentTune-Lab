@@ -1,0 +1,25 @@
+{"question": "What is instruction fine-tuning?", "answer": "Instruction fine-tuning is supervised training that teaches a language model to follow user instructions by learning from prompt and response pairs."}
+{"question": "What problem does LoRA solve?", "answer": "LoRA reduces the cost of fine-tuning by freezing the base model and training small low-rank adapter matrices instead of updating all model weights."}
+{"question": "Why do we split a fine-tuning dataset into train and eval sets?", "answer": "The train split updates the model, while the eval split checks whether the model generalizes to examples it did not train on."}
+{"question": "What is a prompt template?", "answer": "A prompt template is a reusable text format that places fields such as question, context, and answer into a consistent structure for training and inference."}
+{"question": "Why should the inference prompt match the training prompt?", "answer": "Matching the prompt format helps the model recognize the task pattern it learned during fine-tuning and usually produces more stable outputs."}
+{"question": "What does tokenization do?", "answer": "Tokenization converts text into integer token IDs that a language model can process."}
+{"question": "What is truncation in data preparation?", "answer": "Truncation shortens examples that exceed the maximum sequence length so they can fit into the model context window."}
+{"question": "What is padding in model training?", "answer": "Padding adds special tokens to shorter examples in a batch so all examples have the same length."}
+{"question": "Why are labels masked for the prompt part during supervised fine-tuning?", "answer": "Masking the prompt labels makes the loss focus on predicting the answer, not on memorizing the input prompt."}
+{"question": "What is an epoch?", "answer": "An epoch is one full pass through the training dataset."}
+{"question": "What is a training step?", "answer": "A training step is one optimizer update, often after one or more mini-batches have been accumulated."}
+{"question": "What is gradient accumulation?", "answer": "Gradient accumulation combines gradients from multiple small batches before one optimizer update, which simulates a larger batch size with less memory."}
+{"question": "What is overfitting in fine-tuning?", "answer": "Overfitting happens when a model memorizes the training data and performs poorly on new examples."}
+{"question": "How can we reduce overfitting in a small fine-tuning project?", "answer": "We can use an eval set, train for fewer steps, lower the learning rate, add more varied data, and review model outputs on unseen prompts."}
+{"question": "What does eval loss measure?", "answer": "Eval loss measures how well the model predicts held-out evaluation examples; lower eval loss often indicates better fit, but output quality still needs inspection."}
+{"question": "Why is exact match usually too strict for open-ended answers?", "answer": "Open-ended answers can be correct with different wording, so exact match may mark useful responses as wrong."}
+{"question": "What is a simple qualitative evaluation for a fine-tuned assistant?", "answer": "A simple qualitative evaluation compares base and fine-tuned outputs on the same held-out questions and checks correctness, format, and usefulness."}
+{"question": "What should a small fine-tuning project include for a resume?", "answer": "It should include data preparation, training code, evaluation code, reproducible commands, example outputs, and a short experiment report."}
+{"question": "Why is a small base model useful for a learning project?", "answer": "A small model trains faster, uses less memory, and makes it easier to debug the full fine-tuning workflow."}
+{"question": "When should we use a larger model for fine-tuning?", "answer": "A larger model is useful when the task requires stronger reasoning or language ability and the available hardware can support it."}
+{"question": "What is an adapter checkpoint?", "answer": "An adapter checkpoint stores the small trainable LoRA weights, which can be loaded on top of the original base model."}
+{"question": "Why should we keep the base model name in the experiment record?", "answer": "The adapter weights depend on the base model, so recording the base model name is necessary for reproducible inference."}
+{"question": "What is the purpose of a README in a fine-tuning project?", "answer": "The README explains the task, data format, training commands, evaluation process, and results so another person can reproduce the project."}
+{"question": "What is a good first metric for this simple project?", "answer": "A good first metric is average token overlap F1 on the eval set, combined with manual review of several generated answers."}
+{"question": "What is the main limitation of a tiny demo dataset?", "answer": "A tiny dataset can demonstrate the pipeline, but it is usually too small to produce a highly capable assistant."}
